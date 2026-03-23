@@ -1,0 +1,63 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // --- Helper Functions ---
+    
+    // Check if user is logged in
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Check if user is part of the chat (Using the 'participants' array)
+    function isChatParticipant(chatId) {
+      let chatData = firestore.get(/databases/(default)/documents/chats/$(chatId)).data;
+      // ✅ FIXED: Checks the 'participants' array instead of old poster_id fields
+      return request.auth.uid in chatData.participants;
+    }
+    
+    // --- Rules ---
+
+    // 1. Chat Files (Images/PDFs sent in messages)
+    match /chat_files/{chatId}/{fileName} {
+      // Allow write if: Authenticated + In Chat + File < 10MB
+      allow write: if isAuthenticated() 
+                   && isChatParticipant(chatId)
+                   && request.resource.size < 10 * 1024 * 1024;
+      
+      // Allow read if: Authenticated + In Chat
+      allow read: if isAuthenticated() && isChatParticipant(chatId);
+    }
+    
+    // 2. Profile Images (General user uploads)
+    match /profiles/{userId}/{allPaths=**} {
+      allow write: if isAuthenticated() && request.auth.uid == userId;
+      allow read: if isAuthenticated();
+    }
+
+    // 3. Portfolio Images (For Writers)
+    match /portfolio/{userId}/{allPaths=**} {
+      allow write: if isAuthenticated() && request.auth.uid == userId;
+      allow read: if isAuthenticated();
+    }
+
+    // 4. Avatars (Specific avatar path)
+    match /avatars/{userId}/{allPaths=**} {
+      allow write: if isAuthenticated() && request.auth.uid == userId;
+      allow read: if isAuthenticated();
+    }
+
+    // 5. Verification IDs (Sensitive Data)
+    match /verification/{userId}/{allPaths=**} {
+      allow write: if isAuthenticated() && request.auth.uid == userId;
+      // 🔒 SECURE: Only the user themselves (or admin) can read their ID card
+      allow read: if isAuthenticated() && request.auth.uid == userId; 
+    }
+    
+    // Default: Deny everything else
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+[2026-03-05T18:36:40.829Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[2026-03-05T18:36:40.831Z] > authorizing via signed-in user (mdjunadepasha@gmail.com)
+[2026-03-05T18:36:40.831Z] [iam] checking project assignmate-cfe7e for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[2026-03-05T18:36:40.835Z] Checked if tokens are valid: true, expires at: 1772736864238
+[2026-03-05T18:36:40.836Z] Checked if tokens are valid: true, expires at: 1772736864238
+[2026-03-05T18:36:40.838Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/assignmate-cfe7e:testIamPermissions [none]
+[2026-03-05T18:36:40.838Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/assignmate-cfe7e:testIamPermissions x-goog-quota-user=projects/assignmate-cfe7e
+[2026-03-05T18:36:40.839Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/assignmate-cfe7e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[2026-03-05T18:36:42.569Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/assignmate-cfe7e:testIamPermissions 200
+[2026-03-05T18:36:42.569Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/assignmate-cfe7e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[2026-03-05T18:36:42.570Z] Checked if tokens are valid: true, expires at: 1772736864238
+[2026-03-05T18:36:42.570Z] Checked if tokens are valid: true, expires at: 1772736864238
+[2026-03-05T18:36:42.570Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/assignmate-cfe7e/serviceAccounts/assignmate-cfe7e@appspot.gserviceaccount.com:testIamPermissions [none]
+[2026-03-05T18:36:42.570Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/assignmate-cfe7e/serviceAccounts/assignmate-cfe7e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[2026-03-05T18:36:44.299Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/assignmate-cfe7e/serviceAccounts/assignmate-cfe7e@appspot.gserviceaccount.com:testIamPermissions 200
+[2026-03-05T18:36:44.300Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/assignmate-cfe7e/serviceAccounts/assignmate-cfe7e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+
+=== Deploying to 'assignmate-cfe7e'...
+
+i  deploying functions 
+[2026-03-05T18:36:44.305Z] Checked if tokens are valid: true, expires at: 1772736864238
+[2026-03-05T18:36:44.305Z] Checked if tokens are valid: true, expires at: 1772736864238
+[2026-03-05T18:36:44.305Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/assignmate-cfe7e [none]
+[2026-03-05T18:36:44.686Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/assignmate-cfe7e 200
+[2026-03-05T18:36:44.686Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/assignmate-cfe7e {"projectNumber":"52219651086","projectId":"assignmate-cfe7e","lifecycleState":"ACTIVE","name":"assignmate","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-12-12T13:04:51.126231Z"}
+i  functions: preparing codebase default for deployment 
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[2026-03-05T18:36:44.689Z] Checked if tokens are valid: true, expires at: 1772736864238
+[2026-03-05T18:36:44.690Z] Checked if tokens are valid: true, expires at: 1772736864238
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[2026-03-05T18:36:44.690Z] Checked if tokens are valid: true, expires at: 1772736864238
+[2026-03-05T18:36:44.690Z] Checked if tokens are valid: true, expires at: 1772736864238
+[2026-03-05T18:36:44.691Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/cloudbuild.googleapis.com [none]
+[2026-03-05T18:36:44.691Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/cloudbuild.googleapis.com x-goog-quota-user=projects/assignmate-cfe7e
+[2026-03-05T18:36:44.693Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/artifactregistry.googleapis.com [none]
+[2026-03-05T18:36:44.693Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/artifactregistry.googleapis.com x-goog-quota-user=projects/assignmate-cfe7e
+[2026-03-05T18:36:46.738Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/cloudbuild.googleapis.com 200
+[2026-03-05T18:36:46.738Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/cloudbuild.googleapis.com [omitted]
+!  functions: missing required API cloudbuild.googleapis.com. Enabling now... 
+[2026-03-05T18:36:46.739Z] Checked if tokens are valid: true, expires at: 1772736864238
+[2026-03-05T18:36:46.740Z] Checked if tokens are valid: true, expires at: 1772736864238
+[2026-03-05T18:36:46.740Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/cloudbuild.googleapis.com:enable [none]
+[2026-03-05T18:36:46.740Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/cloudbuild.googleapis.com:enable x-goog-quota-user=projects/assignmate-cfe7e
+[2026-03-05T18:36:46.751Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/artifactregistry.googleapis.com 200
+[2026-03-05T18:36:46.752Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/artifactregistry.googleapis.com [omitted]
+!  artifactregistry: missing required API artifactregistry.googleapis.com. Enabling now... 
+[2026-03-05T18:36:46.752Z] Checked if tokens are valid: true, expires at: 1772736864238
+[2026-03-05T18:36:46.752Z] Checked if tokens are valid: true, expires at: 1772736864238
+[2026-03-05T18:36:46.752Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/artifactregistry.googleapis.com:enable [none]
+[2026-03-05T18:36:46.752Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/artifactregistry.googleapis.com:enable x-goog-quota-user=projects/assignmate-cfe7e
+[2026-03-05T18:36:48.495Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/artifactregistry.googleapis.com:enable 400
+[2026-03-05T18:36:48.495Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/artifactregistry.googleapis.com:enable [omitted]
+[2026-03-05T18:36:48.504Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/cloudbuild.googleapis.com:enable 400
+[2026-03-05T18:36:48.504Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/cloudbuild.googleapis.com:enable [omitted]
+
+Error: Request to https://serviceusage.googleapis.com/v1/projects/assignmate-cfe7e/services/artifactregistry.googleapis.com:enable had HTTP Error: 400, Billing account for project '52219651086' is not open. Billing must be enabled for activation of service(s) 'artifactregistry.googleapis.com' to proceed.
+Help Token: AerXPhXJZcdmtXN3QCss0fOpxxTSaUgJRlhCyIQHy7sjLKbhcC4fxYOoadlhG9lvehWV3NbQiIuSzV2h8Ot81dDGd6Pe8H5LWs0ZJ3AT8KAyHPk1
+[2026-03-05T18:36:48.893Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 400,
+      "message": "Billing account for project '52219651086' is not open. Billing must be enabled for activation of service(s) 'artifactregistry.googleapis.com' to proceed.\nHelp Token: AerXPhXJZcdmtXN3QCss0fOpxxTSaUgJRlhCyIQHy7sjLKbhcC4fxYOoadlhG9lvehWV3NbQiIuSzV2h8Ot81dDGd6Pe8H5LWs0ZJ3AT8KAyHPk1",
+      "status": "FAILED_PRECONDITION",
+      "details": [
+        {
+          "@type": "type.googleapis.com/google.rpc.PreconditionFailure",
+          "violations": [
+            {
+              "type": "googleapis.com/billing-enabled",
+              "subject": "?error_code=390002&project=52219651086&services=artifactregistry.googleapis.com"
+            }
+          ]
+        },
+        {
+          "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+          "reason": "UREQ_PROJECT_BILLING_NOT_OPEN",
+          "domain": "serviceusage.googleapis.com/billing-enabled",
+          "metadata": {
+            "project": "52219651086",
+            "services": "artifactregistry.googleapis.com"
+          }
+        }
+      ]
+    }
+  },
+  "response": {
+    "statusCode": 400
+  }
+}

@@ -1,0 +1,9 @@
+﻿api/onboarding.ts(4,36): error TS2307: Cannot find module '@google/generative-ai' or its corresponding type declarations.
+components/dashboard/NotificationDropdown.tsx(4,10): error TS2305: Module '"../../types"' has no exported member 'Notification'.
+components/profile/ActivityFeed.tsx(69,18): error TS2739: Type '{ key: string; post: CommunityPost; }' is missing the following properties from type 'CommunityPostCardProps': onLike, onDelete
+pages/HirerDashboard.tsx(35,29): error TS2551: Property 'getProjectsByHirer' does not exist on type '{ getAllUsers: () => Promise<DocumentData[]>; getUser: (userId: string) => Promise<{ id: string; }>; getUserProfile: (userId: string) => Promise<DocumentData>; ... 51 more ...; submitProposal: (jobId: string, proposalData: any) => Promise<...>; }'. Did you mean 'getProjectById'?
+pages/TalentFeed.tsx(35,29): error TS2339: Property 'getAllTalent' does not exist on type '{ getAllUsers: () => Promise<DocumentData[]>; getUser: (userId: string) => Promise<{ id: string; }>; getUserProfile: (userId: string) => Promise<DocumentData>; ... 51 more ...; submitProposal: (jobId: string, proposalData: any) => Promise<...>; }'.
+pages/WriterDashboard.tsx(36,29): error TS2339: Property 'getJobsByWriter' does not exist on type '{ getAllUsers: () => Promise<DocumentData[]>; getUser: (userId: string) => Promise<{ id: string; }>; getUserProfile: (userId: string) => Promise<DocumentData>; ... 51 more ...; submitProposal: (jobId: string, proposalData: any) => Promise<...>; }'.
+pages/WriterDashboard.tsx(47,47): error TS2339: Property 'total_earnings' does not exist on type 'User'.
+services/supabaseClient.ts(3,33): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+services/supabaseClient.ts(4,37): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
